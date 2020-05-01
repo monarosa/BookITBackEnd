@@ -1,0 +1,139 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-05-01T10:28:58.525Z",
+        "before": [
+          {
+            "result": {
+              "duration": 408287400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.setupAPI()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "1. Create student as a team member and verify status code 422",
+        "description": "",
+        "id": "create-student;1.-create-student-as-a-team-member-and-verify-status-code-422",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3142502200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "authorization token is provided for \"teacher\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"teacher\"",
+                  "offset": 36
+                }
+              ],
+              "location": "APIStepDefinitions.authorization_token_is_provided_for(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 103400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user accepts content type as \"application/json\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"application/json\"",
+                  "offset": 29
+                }
+              ],
+              "location": "APIStepDefinitions.user_accepts_content_type_as(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1087899500,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user sends POST request to \"/api/students/student\" with following information:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/api/students/student\"",
+                  "offset": 27
+                }
+              ],
+              "location": "APIStepDefinitions.user_sends_POST_request_to_with_following_information(String,String,String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "first-name",
+                  "last-name",
+                  "email",
+                  "password",
+                  "role",
+                  "campus-location",
+                  "batch-number",
+                  "team-name"
+                ]
+              },
+              {
+                "cells": [
+                  "Les",
+                  "McDonald",
+                  "lesslee@email.com",
+                  "1111",
+                  "student-team-member",
+                  "VA",
+                  "12",
+                  "Online_Hackers"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected:\u003c403\u003e but was:\u003c201\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:834)\r\n\tat org.junit.Assert.assertEquals(Assert.java:645)\r\n\tat org.junit.Assert.assertEquals(Assert.java:631)\r\n\tat step_definitions.APIStepDefinitions.user_verifies_that_response_status_code_is(APIStepDefinitions.java:60)\r\n\tat ✽.user verifies that response status code is 403(file:src/test/resources/features/api/CreateStudent.feature:10)\r\n",
+              "duration": 2654100,
+              "status": "failed"
+            },
+            "line": 10,
+            "name": "user verifies that response status code is 403",
+            "match": {
+              "arguments": [
+                {
+                  "val": "403",
+                  "offset": 43
+                }
+              ],
+              "location": "APIStepDefinitions.user_verifies_that_response_status_code_is(int)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api"
+          }
+        ]
+      }
+    ],
+    "name": "Create student",
+    "description": "",
+    "id": "create-student",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/api/CreateStudent.feature",
+    "tags": []
+  }
+]
