@@ -3,11 +3,11 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2020-05-01T10:28:58.525Z",
+        "start_timestamp": "2020-05-03T02:39:15.694Z",
         "before": [
           {
             "result": {
-              "duration": 408287400,
+              "duration": 511875000,
               "status": "passed"
             },
             "match": {
@@ -15,19 +15,19 @@
             }
           }
         ],
-        "line": 4,
-        "name": "1. Create student as a team member and verify status code 422",
+        "line": 13,
+        "name": "2. Create student as a teacher and verify status code 201",
         "description": "",
-        "id": "create-student;1.-create-student-as-a-team-member-and-verify-status-code-422",
+        "id": "create-student;2.-create-student-as-a-teacher-and-verify-status-code-201",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 3142502200,
+              "duration": 9710889500,
               "status": "passed"
             },
-            "line": 5,
+            "line": 14,
             "name": "authorization token is provided for \"teacher\"",
             "match": {
               "arguments": [
@@ -42,10 +42,10 @@
           },
           {
             "result": {
-              "duration": 103400,
+              "duration": 114100,
               "status": "passed"
             },
-            "line": 6,
+            "line": 15,
             "name": "user accepts content type as \"application/json\"",
             "match": {
               "arguments": [
@@ -60,10 +60,10 @@
           },
           {
             "result": {
-              "duration": 1087899500,
+              "duration": 5496754100,
               "status": "passed"
             },
-            "line": 7,
+            "line": 16,
             "name": "user sends POST request to \"/api/students/student\" with following information:",
             "match": {
               "arguments": [
@@ -89,9 +89,9 @@
               },
               {
                 "cells": [
-                  "Les",
-                  "McDonald",
-                  "lesslee@email.com",
+                  "Lesly",
+                  "SDET",
+                  "lesly2020@email.com",
                   "1111",
                   "student-team-member",
                   "VA",
@@ -104,27 +104,70 @@
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: expected:\u003c403\u003e but was:\u003c201\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:834)\r\n\tat org.junit.Assert.assertEquals(Assert.java:645)\r\n\tat org.junit.Assert.assertEquals(Assert.java:631)\r\n\tat step_definitions.APIStepDefinitions.user_verifies_that_response_status_code_is(APIStepDefinitions.java:60)\r\n\tat ✽.user verifies that response status code is 403(file:src/test/resources/features/api/CreateStudent.feature:10)\r\n",
-              "duration": 2654100,
-              "status": "failed"
+              "duration": 1422900,
+              "status": "passed"
             },
-            "line": 10,
-            "name": "user verifies that response status code is 403",
+            "line": 19,
+            "name": "user verifies that response status code is 201",
             "match": {
               "arguments": [
                 {
-                  "val": "403",
+                  "val": "201",
                   "offset": 43
                 }
               ],
               "location": "APIStepDefinitions.user_verifies_that_response_status_code_is(int)"
             },
             "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7748584900,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "user deletes previously added students",
+            "match": {
+              "location": "APIStepDefinitions.user_deletes_previously_added_students(String,String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "first-name",
+                  "last-name",
+                  "email",
+                  "password",
+                  "role",
+                  "campus-location",
+                  "batch-number",
+                  "team-name"
+                ]
+              },
+              {
+                "cells": [
+                  "Lesly",
+                  "SDET",
+                  "lesly2020@email.com",
+                  "1111",
+                  "student-team-member",
+                  "VA",
+                  "12",
+                  "Online_Hackers"
+                ]
+              }
+            ],
+            "keyword": "Then "
           }
         ],
         "tags": [
           {
             "name": "@api"
+          },
+          {
+            "name": "@create_student"
+          },
+          {
+            "name": "@berr"
           }
         ]
       }
@@ -134,6 +177,23 @@
     "id": "create-student",
     "keyword": "Feature",
     "uri": "file:src/test/resources/features/api/CreateStudent.feature",
-    "tags": []
+    "tags": [
+      {
+        "name": "@api",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@create_student",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 6
+        }
+      }
+    ]
   }
 ]
