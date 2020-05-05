@@ -3,11 +3,11 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2020-05-03T02:39:15.694Z",
+        "start_timestamp": "2020-05-03T07:01:42.307Z",
         "before": [
           {
             "result": {
-              "duration": 511875000,
+              "duration": 1052779500,
               "status": "passed"
             },
             "match": {
@@ -15,19 +15,19 @@
             }
           }
         ],
-        "line": 13,
-        "name": "2. Create student as a teacher and verify status code 201",
+        "line": 4,
+        "name": "1. Verify that amount of rooms is equals to 18",
         "description": "",
-        "id": "create-student;2.-create-student-as-a-teacher-and-verify-status-code-201",
+        "id": "rooms;1.-verify-that-amount-of-rooms-is-equals-to-18",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 9710889500,
+              "duration": 5793943400,
               "status": "passed"
             },
-            "line": 14,
+            "line": 5,
             "name": "authorization token is provided for \"teacher\"",
             "match": {
               "arguments": [
@@ -42,10 +42,10 @@
           },
           {
             "result": {
-              "duration": 114100,
+              "duration": 153600,
               "status": "passed"
             },
-            "line": 15,
+            "line": 6,
             "name": "user accepts content type as \"application/json\"",
             "match": {
               "arguments": [
@@ -60,103 +60,57 @@
           },
           {
             "result": {
-              "duration": 5496754100,
+              "duration": 354648300,
               "status": "passed"
             },
-            "line": 16,
-            "name": "user sends POST request to \"/api/students/student\" with following information:",
+            "line": 7,
+            "name": "user sends GET request to \"/api/rooms\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"/api/students/student\"",
-                  "offset": 27
+                  "val": "\"/api/rooms\"",
+                  "offset": 26
                 }
               ],
-              "location": "APIStepDefinitions.user_sends_POST_request_to_with_following_information(String,String,String\u003e\u003e)"
+              "location": "APIStepDefinitions.user_sends_GET_request_to(String)"
             },
-            "rows": [
-              {
-                "cells": [
-                  "first-name",
-                  "last-name",
-                  "email",
-                  "password",
-                  "role",
-                  "campus-location",
-                  "batch-number",
-                  "team-name"
-                ]
-              },
-              {
-                "cells": [
-                  "Lesly",
-                  "SDET",
-                  "lesly2020@email.com",
-                  "1111",
-                  "student-team-member",
-                  "VA",
-                  "12",
-                  "Online_Hackers"
-                ]
-              }
-            ],
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 1422900,
+              "duration": 23955400,
               "status": "passed"
             },
-            "line": 19,
-            "name": "user verifies that response status code is 201",
+            "line": 8,
+            "name": "user should be able to see 18 rooms",
             "match": {
               "arguments": [
                 {
-                  "val": "201",
+                  "val": "18",
+                  "offset": 27
+                }
+              ],
+              "location": "APIStepDefinitions.user_should_be_able_to_see_rooms(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 149600,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user verifies that response status code is 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
                   "offset": 43
                 }
               ],
               "location": "APIStepDefinitions.user_verifies_that_response_status_code_is(int)"
             },
             "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 7748584900,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "user deletes previously added students",
-            "match": {
-              "location": "APIStepDefinitions.user_deletes_previously_added_students(String,String\u003e\u003e)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "first-name",
-                  "last-name",
-                  "email",
-                  "password",
-                  "role",
-                  "campus-location",
-                  "batch-number",
-                  "team-name"
-                ]
-              },
-              {
-                "cells": [
-                  "Lesly",
-                  "SDET",
-                  "lesly2020@email.com",
-                  "1111",
-                  "student-team-member",
-                  "VA",
-                  "12",
-                  "Online_Hackers"
-                ]
-              }
-            ],
-            "keyword": "Then "
           }
         ],
         "tags": [
@@ -164,19 +118,19 @@
             "name": "@api"
           },
           {
-            "name": "@create_student"
+            "name": "@rooms"
           },
           {
-            "name": "@berr"
+            "name": "@getRoomCount"
           }
         ]
       }
     ],
-    "name": "Create student",
+    "name": "Rooms",
     "description": "",
-    "id": "create-student",
+    "id": "rooms",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/api/CreateStudent.feature",
+    "uri": "file:src/test/resources/features/api/GetRooms.feature",
     "tags": [
       {
         "name": "@api",
@@ -187,7 +141,7 @@
         }
       },
       {
-        "name": "@create_student",
+        "name": "@rooms",
         "type": "Tag",
         "location": {
           "line": 1,
